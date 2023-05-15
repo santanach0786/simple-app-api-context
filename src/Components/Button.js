@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext, Datos } from "./Provider/Provider";
+
+const datos = {
+    nombre: "Yarelis",
+    edad: "Lopez",
+    edad: 27
+}
 
 const Button = () => {
+  const { setState } = useContext(DataContext);
   return (
-    <button>Change Props</button>
+    <button className='btn btn-primary'
+            onClick={()=>setState(datos)}>Change Props</button>
   )
 }
 
